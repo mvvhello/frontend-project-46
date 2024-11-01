@@ -2,6 +2,7 @@
 
 import { program } from 'commander';
 import parseFile from '../src/parsefile.js';
+import path from 'path';
 
 program
   .name('gendiff')
