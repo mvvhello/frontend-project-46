@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 
 import { program } from 'commander';
-import parseFile from '../src/parsefile.js';
 import path from 'path';
+import parseFile from '../src/parsefile.js';
+import findDiff from '../src/finddif.js';
 
 program
   .name('gendiff')
@@ -17,6 +18,8 @@ program
 
     const data1 = parseFile(resolvedPathOne);
     const data2 = parseFile(resolvedPathTwo);
+
+    console.log(findDiff(data1, data2));
   });
 
 program.parse(process.argv);
